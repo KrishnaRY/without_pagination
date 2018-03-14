@@ -1,0 +1,52 @@
+<div class='logout'>
+    <a [routerLink]="['/logout']"> <img style='width:90px;height: 50px' src="./assets/images/logout.jpg" /> </a>
+</div>
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        <h2> {{pageTitle}}</h2>
+    </div>
+    <div class='panel-body'>
+        <div class='table-responsive'>
+            <table class='table' *ngIf='workouts && workouts.length'>
+                <thead>
+                    <tr>
+
+
+                        <th>Title</th>
+                        <th>CalBurntPerUnitTime</th>
+                        <th>Unit Time</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let workout of workouts'>
+
+
+                        <td><a [routerLink]="['/workouttranslist', workout.workoutId]">
+                               {{ workout.title | uppercase }}
+                            </a></td>
+                        <td>{{ workout.calBurntPerUnitTime }}</td>
+                        <td> {{ workout.unitTime }} </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="btn-toolbar" role="toolbar" style="margin: 0;">
+                <div class="btn-group">
+                    <label style="margin-top:10px" >Page {{currentIndex}}/{{pageNumber}}</label>
+                </div>
+                <div class="btn-group pull-right">
+                    <ul class="pagination">
+                        <li [ngClass]="{'disabled': (currentIndex == 1 || pageNumber == 0)}"><a (click)="prevPage()" style="font-size: 15px;">Prev</a></li>
+                        <li *ngFor="let page of pagesIndex" [ngClass]="{'active': (currentIndex == page)}">
+                            <a (click)="setPage(page)" style="font-size: 15px;">{{page}}</a>
+                        </li>
+                        <li [ngClass]="{'disabled': (currentIndex == pageNumber || pageNumber == 0)}"><a (click)="nextPage()" style="font-size: 15px;">Next</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class='panel-footer'>
+    <button class="btn btn-default" (click)="newWorkout();">Create Workout</button>
+</div>
