@@ -8,7 +8,9 @@ import { HttpModule } from '@angular/http';
 import { Routes, RouterModule,Router } from '@angular/router';
 import { User } from '../_model/user';
 import { ServiceUrlProviderService } from '../serviceurlprovider.service';
-import { AlertService  } from '../_services/alert.service';
+import { AlertService  } from '../alert/alert.service';
+import { CheckUserLoginService } from '../checkuserlogin.service';
+import { CheckUserLoginComponent } from '../checkuserlogin/index';
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
@@ -22,9 +24,10 @@ describe('LoginComponent', () => {
          providers:[ LoginService,
          { provide: LoginService, useClass: LoginService },
          ServiceUrlProviderService, { provide: ServiceUrlProviderService, useClass: ServiceUrlProviderService },
-          AlertService,{ provide: AlertService, useClass: AlertService}
+          AlertService,{ provide: AlertService, useClass: AlertService},
+           CheckUserLoginService,{ provide: CheckUserLoginService, useClass: CheckUserLoginService}
          ],
-      declarations: [ LoginComponent ]
+      declarations: [ LoginComponent,CheckUserLoginComponent ]
     })
     .compileComponents();
   }));

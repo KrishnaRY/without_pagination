@@ -8,7 +8,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { WorkouttransactionsService } from '../workouttransactions/workouttransactions.service';
 import { ServiceUrlProviderService } from '../serviceurlprovider.service';
-import { AlertService  } from '../_services/alert.service';
+import { AlertService  } from '../alert/alert.service';
+import { CheckUserLoginService } from '../checkuserlogin.service';
+import { CheckUserLoginComponent } from '../checkuserlogin/index';
 describe('WorkouttransactionsComponent', () => {
   let component: WorkouttransactionsComponent;
   let fixture: ComponentFixture<WorkouttransactionsComponent>;
@@ -22,8 +24,9 @@ describe('WorkouttransactionsComponent', () => {
   providers:    [ WorkouttransactionsService,
          { provide: WorkouttransactionsService, useClass: WorkouttransactionsService },
          ServiceUrlProviderService, { provide: ServiceUrlProviderService, useClass: ServiceUrlProviderService},
-          AlertService,{ provide: AlertService, useClass: AlertService} ],
-      declarations: [ WorkouttransactionsComponent ]
+          AlertService,{ provide: AlertService, useClass: AlertService},
+           CheckUserLoginService,{ provide: CheckUserLoginService, useClass: CheckUserLoginService} ],
+      declarations: [ WorkouttransactionsComponent,CheckUserLoginComponent ]
     })
     .compileComponents();
   }));

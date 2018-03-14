@@ -12,6 +12,9 @@
             <div *ngIf="f.submitted && !password.valid" class="alert alert-danger">Password is required</div>
         </div>
         <div class="form-group">
+            <a class='btn btn-default' (click)='SignUp()' style='width:80px'>
+        <i class='glyphicon glyphicon-chevron-up'></i> SignUp
+    </a>
             <button class="btn btn-primary">Login</button>
         </div>
     </form>

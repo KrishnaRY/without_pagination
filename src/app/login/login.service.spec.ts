@@ -4,12 +4,12 @@ import { Http, Response, Headers, URLSearchParams, RequestOptions } from '@angul
 import { LoginService } from './login.service';
 import { ServiceUrlProviderService } from '../serviceurlprovider.service';
 describe('LoginService', () => {
-  let http:Http,
+/*  let http:Http,
       injector:injector,
       backend:MockBackend,
       setfunction:Function,
       loginService:LoginService,
-      responseBody:object;
+      responseBody:object;*/
 
 
   beforeEach(() => {
@@ -18,7 +18,7 @@ describe('LoginService', () => {
        ServiceUrlProviderService, { provide: ServiceUrlProviderService, useClass: ServiceUrlProviderService}]
     });
 
-    http=injector.get(Http);
+   /* http=injector.get(Http);
     backend=injector.get(MockBackend);
     loginService=injector.get(LoginService);
     setfunction=(options):void=>{
@@ -27,7 +27,7 @@ describe('LoginService', () => {
       backend.connectons.subscribe((connection:MockConnection)=>{
       connecton.MockRespond(baseResponse);
       });
-    }
+    }*/
 
   });
 

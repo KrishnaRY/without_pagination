@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { WorkouttransactionsService } from '../workouttransactions/workouttransactions.service';
 import { Workout } from '../_model/workout';
 import { WorkoutTransaction } from '../_model/workouttransaction';
-import { AlertService  } from '../_services/alert.service';
+import { AlertService  } from '../alert/alert.service';
 @Component({
   selector: 'app-workouttransactions',
   templateUrl: './workouttransactions.component.html',

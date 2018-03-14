@@ -5,16 +5,17 @@ import { WorkoutlistComponent } from './workoutlist/workoutlist.component';
 import { WorkouttransactionsListComponent } from './workouttransactionslist/workouttransactionslist.component';
 import { WorkouttransactionsComponent} from './workouttransactions/workouttransactions.component';
 import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/index';
 const appRoutes: Routes = [
-    { path: '', component: HomeComponent },
+    { path: '', component: LoginComponent },
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
     { path: 'workout/:userId', component: WorkoutComponent },
     { path: 'workoutlist/:userId', component: WorkoutlistComponent },
     { path: 'workouttranslist/:workoutId', component: WorkouttransactionsListComponent },
     { path: 'workouttrans/:workoutId', component: WorkouttransactionsComponent },
-    { path: 'logout', component: HomeComponent },
-    // otherwise redirect to home
+    { path: 'logout', component: LoginComponent },
     { path: '**', redirectTo: '' }
 ];
 export const routing = RouterModule.forRoot(appRoutes);

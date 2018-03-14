@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service'
 import { Router, ActivatedRoute } from '@angular/router';
 import { User } from '../_model/user';
-import { AlertService  } from '../_services/alert.service';
+import { AlertService  } from '../alert/alert.service';
+import { CheckUserLoginService } from '../checkuserlogin.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
   pageTitle:string='User Login ';
   returnUrl: string;
   constructor(private route: ActivatedRoute,
-        private router: Router,private loginService: LoginService,private alertService: AlertService) { }
+        private router: Router,private loginService: LoginService,private alertService: AlertService,
+        private checkUserLoginService:CheckUserLoginService) { }
 
   ngOnInit() {
       this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
@@ -25,9 +27,9 @@ export class LoginComponent implements OnInit {
 
     this.loginService.userLogin(this.model).subscribe(
       user => {
-         this.user=user;
-                   
-     this.router.navigate(['/workoutlist', `${this.user.userId}`]);
+      this.user=user;
+      this.checkUserLoginService.setUserStaus(true);           
+      this.router.navigate(['/workoutlist', `${this.user.userId}`]);
     },
       error => {
         this.alertService.error(error);
@@ -36,7 +38,9 @@ export class LoginComponent implements OnInit {
 
 
   }
-
+SignUp(){
+   this.router.navigate(['/register']);
+}
 
 }
 

@@ -14,9 +14,10 @@ import { WorkouttransactionsListComponent } from './workouttransactionslist/work
 import { WorkouttransactionsComponent,WorkouttransactionsService } from './workouttransactions/index';
 import { ServiceUrlProviderService } from './serviceurlprovider.service';
 import { HomeComponent } from './home/home.component';
-import { AlertService  } from './_services/alert.service';
-import { AlertComponent } from './_directives/index';
+import { AlertComponent,AlertService } from './alert/index';
+import { CheckUserLoginComponent } from './checkuserlogin/index';
 import { DecimalPipe } from '@angular/common';
+import { CheckUserLoginService } from './checkuserlogin.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { DecimalPipe } from '@angular/common';
     WorkouttransactionsListComponent,
     WorkouttransactionsComponent,
     HomeComponent,
-    AlertComponent
+    AlertComponent,
+    CheckUserLoginComponent
     
   ],
   schemas: [
@@ -42,7 +44,7 @@ import { DecimalPipe } from '@angular/common';
     routing
     
   ],
-   providers: [ServiceUrlProviderService,WorkouttransactionsService,WorkoutService,AlertService],
+   providers: [ServiceUrlProviderService,WorkouttransactionsService,WorkoutService,AlertService,CheckUserLoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

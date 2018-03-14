@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 @Injectable()
-export class CheckUserLogin  {
+export class CheckUserLoginService  {
     isUserLoggedIn : boolean;
   constructor() { 
     this.isUserLoggedIn=false;

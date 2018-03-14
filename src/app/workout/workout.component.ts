@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UnitTime } from '../_model/unittime';
 import { Router, ActivatedRoute } from '@angular/router';
 import { WorkoutService } from './workout.service';
-import { AlertService  } from '../_services/alert.service';
+import { AlertService  } from '../alert/alert.service';
 @Component({
   selector: 'app-workout',
   templateUrl: './workout.component.html',

@@ -1,8 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AlertService  } from './_services/alert.service';
-import { AlertComponent } from './_directives/index';
+import { AlertComponent,AlertService } from './alert/index';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({

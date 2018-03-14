@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { RegisterService } from './register.service';
 import { ServiceUrlProviderService } from '../serviceurlprovider.service';
-import { AlertService  } from '../_services/alert.service';
+import { AlertService  } from '../alert/alert.service';
 describe('RegisterComponent', () => {
   let component: RegisterComponent;
   let fixture: ComponentFixture<RegisterComponent>;
