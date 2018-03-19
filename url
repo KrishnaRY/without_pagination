@@ -1,0 +1,16 @@
+WorkOut java:
+
+Location:	C:\workout_workspace\workout
+Git		:	http://172.18.2.18/Krishna/workout.git
+
+WorkOut App:
+Location:	C:\workout_workspace\workoutApp
+Git		:	http://172.18.2.18/Krishna/workoutApp.git
+
+
+Jenkins:
+
+Location:	C:\workout_workspace\jenkins
+Url:		http://localhost:8080/jenkins
+user:		admin
+password:	admin
